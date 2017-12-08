@@ -1,0 +1,348 @@
+/* 页面最上方的header容器 */
+div.headerContainer{
+    height: 38px;
+    background-color: #f5f5f5;
+    line-height: 38px;
+}
+
+header.mainHeader{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+/* li里面的列表容器 */
+header.mainHeader .mainHeaderList{
+    position: relative;
+}
+/* header列表内容区 */
+header.mainHeader .mainHeaderListContent{
+    
+}
+
+/* header列表下拉区 */
+header.mainHeader .mainHeaderListPopup{
+    position: absolute;
+    z-index: 1000;
+    top: 38px;
+    left: -6px;
+    border: 1px solid #eee;
+    border-top: none;
+    background-color: #fff;
+    display: none;
+}
+
+/* 统一设置箭头图标 */
+i.mainHeaderArrow{
+    width: 7px;
+    height: 7px;
+    margin-top: 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: url('../widget/headerWidget.png') no-repeat 0 0;
+}
+
+/* header左边部分的列表 */
+.headerLeftSection li{
+    float: left;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 38px;
+}
+/* 统一设置左边部分的列表文字以及图标 */
+.headerLeftSection li .mainHeaderListContent span{
+    float: left;
+}
+.headerLeftSection li .mainHeaderListContent i{
+    float: left;
+}
+.headerLeftSection li .mainHeaderListContent a{
+    float: left;
+}
+
+/* vip图标 */
+.headerLeftSection li i.userVipLogo{
+    width: 17px;height: 17px;
+    margin-top: 13px;
+    margin-left: 5px;
+    background: url('../widget/userVipLogo.png') no-repeat 0 0;
+    background-size: 17px auto;
+}
+
+/* 用户信息下拉框容器 */
+.headerLeftSection li#userInfo .mainHeaderListPopup{
+    width: 265px;
+    height: 120px;
+    line-height: normal;
+}
+
+/* 头像 */
+.headerLeftSection li#userInfo .mainHeaderListPopup .userAvatar{
+    float: left;
+    width: 56px;
+    height: 56px;
+    margin: 22px 27px 0px 27px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.headerLeftSection li#userInfo .mainHeaderListPopup .userAvatar img{
+    width: 100%;
+    height: 100%;
+}
+
+/* 用户信息下拉框容器右侧 > 用户信息容器 */
+.headerLeftSection li#userInfo .mainHeaderListPopup .userInfoContainer{
+    width: 140px;
+    margin-left: 120px;
+}
+
+/* 用户信息下拉框容器右侧 > 用户信息容器 上部分，账户管理 */
+.headerLeftSection li#userInfo .mainHeaderListPopup .userInfoContainer .userInfoManage{
+    text-align: right;
+    margin: 12px 0px;
+}
+
+/* 账户管理中间的竖线图标 */
+.headerLeftSection li#userInfo .mainHeaderListPopup .userInfoContainer .userInfoManage i{
+    display: inline-block;
+    width: 2px;
+    height: 10px;
+    background-color: #e2e2e2;
+    margin: 0px 3px;
+}
+
+.headerLeftSection li#userInfo .mainHeaderListPopup .userInfoContainer p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* 查看你的专属权益 */
+.headerLeftSection li#userInfo .mainHeaderListPopup .userEquity{
+    width: 245px;
+    height: 25px;
+    line-height: 25px;
+    margin: 10px auto;
+    text-align: center;
+    border: 1px solid #ffe8de;
+    background: #fff0e8;
+}
+.headerLeftSection li#userInfo .mainHeaderListPopup .userEquity a{
+    color: #3c3c3c;
+}
+.headerLeftSection li#userInfo .mainHeaderListPopup .userEquity a:hover{
+    color: #f40;
+}
+
+/* 消息图标 */
+.headerLeftSection li i.messageLogo{
+    width: 11px;height: 9px;
+    margin-top: 15px;
+    margin-right: 5px;
+    background: url('../widget/headerWidget.png') no-repeat 0 -9px;
+}
+
+/* 消息下拉框容器 */
+.headerLeftSection li#headerMessage .mainHeaderListPopup{
+    width: 290px;
+    height: 273px;
+    line-height: normal;
+}
+
+/* 消息标题栏 */
+.headerLeftSection li#headerMessage .mainHeaderListPopup .messageHeading{
+    width: 100%;
+    height: 37px;
+    line-height: 37px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+/* 消息中间内容区 */
+.headerLeftSection li#headerMessage .mainHeaderListPopup .messageContent{
+    width: 100%;
+    height: 171px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    margin-top: 30px;
+    font-size: 14px;
+}
+/* 左引号 */
+.headerLeftSection li#headerMessage .mainHeaderListPopup .messageContent .leftQuoteMark{
+    display: inline-block;
+    width: 23px;
+    height: 14px;
+    background: url('../widget/headerWidget.png') no-repeat 0 -62px;
+}
+/* 右引号 */
+.headerLeftSection li#headerMessage .mainHeaderListPopup .messageContent .rightQuoteMark{
+    display: inline-block;
+    width: 23px;
+    height: 14px;
+    background: url('../widget/headerWidget.png') no-repeat 0 -79px;
+}
+/* 消息图标 */
+.headerLeftSection li#headerMessage .mainHeaderListPopup .messageContent .messageIcon{
+    width: 220px;
+    height: 130px;
+    margin: 0px auto;
+}
+
+/* 消息底部 */
+.headerLeftSection li#headerMessage .mainHeaderListPopup .messageFooter{
+    width: 100%;
+    height: 33px;
+    line-height: 33px;
+}
+/* 消息底部左侧图标 */
+.headerLeftSection li#headerMessage .mainHeaderListPopup .messageFooter .setting{
+    float: left;
+    width: 65px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+}
+/* 设置图标 */
+.headerLeftSection li#headerMessage .mainHeaderListPopup .messageFooter .settingIcon{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-right: 3px;
+    background: url('../widget/headerWidget.png') no-repeat 0px -98px;
+}
+/* 编辑图标 */
+.headerLeftSection li#headerMessage .mainHeaderListPopup .messageFooter .edittingIcon{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: url('../widget/headerWidget.png') no-repeat 0px -111px;
+    margin: auto 0px;
+}
+/* 消息底部右侧文字 */
+.headerLeftSection li#headerMessage .mainHeaderListPopup .messageFooter .messageTypeContainer{
+    float: right;
+    margin-right: 15px;
+}
+.headerLeftSection li#headerMessage .mainHeaderListPopup .messageFooter .messageTypeContainer p{
+    margin: 0;
+}
+.headerLeftSection li#headerMessage .mainHeaderListPopup .messageFooter .messageTypeContainer .split{
+    display: inline-block;
+    width: 2px;
+    height: 10px;
+    margin: 0 5px;
+    background: #ccc;
+}
+
+
+/* header右边部分的列表 */
+.headerRightSection ul{
+    float: left;
+}
+.headerRightSection li{
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+/* 统一设置右边部分的列表文字以及图标 */
+.headerRightSection li .mainHeaderListContent span{
+    float: left;
+}
+.headerRightSection li .mainHeaderListContent i{
+    float: left;
+}
+.headerRightSection li .mainHeaderListContent a{
+    float: left;
+}
+.headerRightSection li .mainHeaderListContent strong{
+    float: left;
+}
+
+
+/* 我的淘宝下拉框容器 */
+.headerRightSection li#myTaobao .mainHeaderListPopup{
+    width: 85px;
+    line-height: normal;
+}
+.headerRightSection li#myTaobao .mainHeaderListPopup ul{
+    width: 85px;
+    margin: 10px 0px;
+}
+.headerRightSection li#myTaobao .mainHeaderListPopup ul li{
+    width: 75px;
+    height: 28px;
+    line-height: 28px;
+    margin: 0;
+    padding: 0px 5px;
+}
+.headerRightSection li#myTaobao .mainHeaderListPopup ul li:hover{
+    background: #f5f5f5;
+}
+
+
+
+/* 购物车图标 */
+.headerRightSection li i.shoppingCartLogo{
+    width: 13px;height: 13px;
+    margin-top: 13px;
+    margin-right: 5px;
+    background: url('../widget/headerWidget.png') no-repeat 0 -20px;
+}
+/* 购物车数字 */
+.headerRightSection li strong.shoppingCartNumber{
+    color: #f22e00;
+}
+
+
+.headerRightSection li#collectionHeader .mainHeaderListContent{
+    height: 38px;
+}
+/* 收藏夹图标 */
+.headerRightSection li i.collectionLogo{
+    width: 12px;height: 12px;
+    margin-top: 13px;
+    margin-right: 5px;
+    background: url('../widget/headerWidget.png') no-repeat 0px -35px;
+}
+/* 收藏夹悬浮改变子元素背景图 */
+.headerRightSection li#collectionHeader .mainHeaderListContent:hover i.collectionLogo{
+    background: url('../widget/headerWidget.png') no-repeat -14px -35px;
+}
+
+/* 收藏夹下拉框容器 */
+.headerRightSection li#collectionHeader .mainHeaderListPopup{
+    width: 70px;
+    line-height: normal;
+}
+.headerRightSection li#collectionHeader .mainHeaderListPopup ul{
+    width: 70px;
+    margin: 10px 0px;
+}
+.headerRightSection li#collectionHeader .mainHeaderListPopup ul li{
+    width: 60px;
+    height: 28px;
+    line-height: 28px;
+    margin: 0;
+    padding: 0px 5px;
+}
+.headerRightSection li#collectionHeader .mainHeaderListPopup ul li:hover{
+    background: #f5f5f5;
+}
+
+
+/* 右侧两部分列表分割线 */
+.headerRightSplit{
+    width: 1px;height: 14px;
+    margin: 12px 10px 0px 10px;
+    float: left;
+    background-color: #dfdfe4;
+}
+
+/* 网站导航图标 */
+.headerRightSection li i.siteNavLogo{
+    width: 9px;height: 9px;
+    margin-top: 15px;
+    margin-right: 5px;
+    background: url('../widget/headerWidget.png') no-repeat 0 -50px;
+}

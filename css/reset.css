@@ -1,0 +1,18 @@
+html, body, div, ul, ol, li, a, span, header, main{
+    margin: 0; padding: 0;
+    list-style: none;
+    border: 0;
+    text-decoration: none;
+}
+
+html{
+    font-size: 12px;
+}
+
+a, a:hover, a:visited{
+    color: #000;
+}
+
+.block{ display: block; }
+.fl{ float: left; }
+.fr{ float: right; }
