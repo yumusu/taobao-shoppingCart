@@ -1,8 +1,9 @@
-html, body, div, ul, ol, li, a, span, header, main{
+html, body, div, ul, ol, li, a, span, header, main, input{
     margin: 0; padding: 0;
     list-style: none;
     border: 0;
     text-decoration: none;
+    outline: none;
 }
 
 html{

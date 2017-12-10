@@ -241,6 +241,7 @@
         </div>
 
         <main class="shoppingCartMain">
+            <!-- 购物车上面的mainHeading -->
             <div class="mainHeading">
                 <div class="mainHeadingLogoContainer">
                     <a class="mainHeadingLink" href="https://www.taobao.com">
@@ -249,10 +250,23 @@
                 </div>
                 <div class="mainHeadingSearchPanel">
                     <div class="searchType">
-                        <span>宝贝</span>
-                        <i class="arrow"></i>
+                        <ul id="searchTypeUl">
+                            <!-- 搜索类型列表 -->
+                        </ul>
+                    </div>
+                    <div class="searchInputBox">
+                        <i class="searchIcon"></i>
+                        <input id="mainHeadingSearchInput" type="text" class="searchInput">
+                    </div>
+                    <div class="searchButtonBox">
+                        <input class="searchButton" type="button" value="搜索">
                     </div>
                 </div>
+            </div>
+
+            <!-- 购物车 -->
+            <div class="cartContainer">
+                这里是购物车页面
             </div>
         </main>
     </body>
