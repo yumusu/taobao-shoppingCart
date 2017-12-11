@@ -135,5 +135,124 @@ div.mainHeadingSearchPanel .searchButtonBox .searchButton{
     width: 75px;
     background: #f50;
     color: #fff;
-    font-size: 22px;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+/* 购物车主体部分 */
+
+/* 3个选项列表 */
+div.cartContainer .cartFilterBar .cartFilterTypeLi{
+    float: left;
+    font-size: 0;
+    -webkit-text-size-adjust: none;
+    padding-bottom: 15px;
+    cursor: no-drop;
+}
+div.cartContainer .cartFilterBar .cartFilterTypeLi a.filterLink{
+    margin-left: 15px;
+    cursor: no-drop;
+}
+div.cartContainer .cartFilterBar .cartFilterTypeLi a.filterLink .filterTypeTitle{
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+div.cartContainer .cartFilterBar .cartFilterTypeLi a.filterLink .filterTypeNumber{
+    font-size: 16px;
+    margin: 0 30px 0 5px;
+}
+div.cartContainer .cartFilterBar .cartFilterTypeLi a.filterLink i{
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background: #e8e8e8;
+}
+/* 当前选中列表的样式 */
+div.cartContainer .cartFilterBar .selected{
+    cursor: pointer;
+}
+div.cartContainer .cartFilterBar .selected a.filterLink{
+    color: #f40;
+    cursor: pointer;
+}
+
+/* 右侧快捷栏 */
+div.cartContainer .cartFilterBar .filterShortcuts{
+    float: right;
+    height: 36px;
+    line-height: 36px;
+    font-size: 0;
+    -webkit-text-size-adjust: none;
+}
+div.cartContainer .cartFilterBar .filterShortcuts span{
+    font-size: 14px;
+}
+div.cartContainer .cartFilterBar .filterShortcuts .filterNumber{
+    color: #f40;
+    font-weight: bold;
+    margin: 0 5px;
+}
+div.cartContainer .cartFilterBar .filterShortcuts .filterButton{
+    height: 28px;
+    background: #aaa;
+    color: #fff;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+/* 下方线 */
+div.cartContainer .cartFilterBar .filterBottomLine{
+    position: relative;
+    clear: both;
+    height: 2px;
+    background: #e6e6e6;
+}
+div.cartContainer .cartFilterBar .filterBottomLine .filterLine{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 123px;
+    height: 2px;
+    background: #f40;
+}
+
+/* cartMain 购物车主部分 */
+
+/* cartHeading 购物车表头选择框 */
+div.cartContainer .cartMain .cartHeading .allSelect{
+    float: left;
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+}
+div.cartContainer .cartMain .cartHeading .allSelect .cartCheckbox{
+    float: left;
+    width: 15px;
+    height: 13px;
+    background: url('../widget/cartMain.png') no-repeat 0 0;
+    margin-top: 18px;
+    margin-left: 15px;
+}
+div.cartContainer .cartMain .cartHeading .allSelect .cartCheckboxLabel{
+    float: left;
+    margin-left: 8px;
+}
+
+/* cartHeading 购物车表头商品信息 */
+div.cartContainer .cartMain .cartHeading .goodsInfo{
+    float: left;
+    width: 302px;
+    height: 50px;
+    line-height: 50px;
+    background: #ddd;
+}
+
+/* cartHeading 购物车表头类型选择 */
+div.cartContainer .cartMain .cartHeading .typeSelected{
+    float: left;
+    width: 192px;
+    height: 50px;
+    background: #aaa;
 }

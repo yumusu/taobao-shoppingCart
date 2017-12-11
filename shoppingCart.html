@@ -266,7 +266,52 @@
 
             <!-- 购物车 -->
             <div class="cartContainer">
-                这里是购物车页面
+                <div class="cartFilterBar">
+                    <ul class="cartFilterTypeUl" id="cartFilterTypeUlId">
+                        <li class="cartFilterTypeLi allGoodsFilter selected">
+                            <a href="javascript:;" class="filterLink">
+                                <span class="filterTypeTitle">全部商品</span>
+                                <span class="filterTypeNumber">5</span>
+                                <i></i>
+                            </a>
+                        </li>
+                        <li class="cartFilterTypeLi onSaleGoodsFilter">
+                            <a href="javascript:;" class="filterLink">
+                                <span class="filterTypeTitle">降价商品</span>
+                                <span class="filterTypeNumber">0</span>
+                                <i></i>
+                            </a>
+                        </li>
+                        <li class="cartFilterTypeLi fewStockGoodsFilter">
+                            <a href="javascript:;" class="filterLink">
+                                <span class="filterTypeTitle">库存紧张</span>
+                                <span class="filterTypeNumber">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="filterShortcuts">
+                        <span class="filterText">已选商品（不含运费）</span>
+                        <span class="filterNumber">0.00</span>
+                        <input class="filterButton" type="button" value="结算">
+                    </div>
+                    <div class="filterBottomLine">
+                        <div class="filterLine"></div>
+                    </div>
+                </div>
+                <div class="cartMain">
+                    <div class="cartHeading">
+                        <div class="allSelect">
+                            <div class="cartCheckbox" id="cartHeadingAllSelectId"></div>
+                            <label class="cartCheckboxLabel" for="cartHeadingAllSelectId">全选</label>
+                        </div>
+                        <div class="goodsInfo">
+                            <div class="goodsInfoInner">
+                                商品信息
+                            </div>
+                        </div>
+                        <div class="typeSelected"></div>
+                    </div>
+                </div>
             </div>
         </main>
     </body>
@@ -274,4 +319,6 @@
     <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="./js/data.js"></script>
     <script type="text/javascript" src="./js/mainHeader.js"></script>
+    <script type="text/javascript" src="./js/cartHeading.js"></script>
+    <script type="text/javascript" src="./js/cartMain.js"></script>
 </html>

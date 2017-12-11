@@ -4,7 +4,7 @@ function MainHeader( obj ){
         this[i] = obj[i];
     }
     this.MainHeaderLinks = MainHeaderLinks;
-    console.log(this.MainHeaderLinks);
+    // console.log(this.MainHeaderLinks);
     // 搜索类型列表
     this.searchTypeValue = ['宝贝', '天猫', '店铺'];
     this.init();
