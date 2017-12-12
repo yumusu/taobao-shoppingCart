@@ -410,3 +410,101 @@ var MainHeaderLinks = {
         }
     }
 }
+
+var Goods = {
+    goods: [
+        {
+            store: {
+                type: "tmall",
+                name: "美的官方旗舰店"
+            },
+            id: "529472763342",
+            title: "Midea/美的 WH415E2g 电热水壶防烫电烧水壶304不锈钢特价",
+            services: ["credit", "electric"],
+            type: [{
+                title: "颜色分类",
+                value: "红色"
+            }],
+            primePrice: null,
+            unitPrice: 99.00,
+            quota: false,
+            coupon: null
+        },
+        {
+            store: {
+                type: "gold",
+                name: "手机壳文化"
+            },
+            id: "541868015231",
+            title: "华硕ZenPad 3S 10全包边皮套Z500M平板电脑保护套P027支架外壳9.7",
+            services: [],
+            type: [{
+                title: "颜色分类",
+                value: "奶牛"
+            }],
+            primePrice: 35.00,
+            unitPrice: 32.00,
+            quota: false,
+            coupon: null
+        },
+        {
+            store: {
+                type: "tmall",
+                name: "美的官方旗舰店"
+            },
+            id: "527067602470",
+            title: "Midea/美的 KFR-26GW/WCBD3@ 大1匹智能静音壁挂冷暖空调挂机",
+            services: ["credit", "customize", "electric"],
+            type: [{
+                title: "空调面板颜色",
+                value: "陶瓷白"
+            }],
+            primePrice: 2199.00,
+            unitPrice: 1999.00,
+            quota: 5,
+            coupon: null
+        },
+        {
+            store: {
+                type: "tmall",
+                name: "醉牛数码专营店"
+            },
+            id: "539887265910",
+            title: "YC2 华硕Zenpad 3S 10 Z500M钢化玻璃膜 ASUS Z500M钢化膜 保护膜",
+            services: ["credit", "return", "protect"],
+            type: [{
+                title: "颜色分类",
+                value: "升级版-2.5D弧边轻薄钢化膜"
+            }],
+            primePrice: 30.00,
+            unitPrice: 25.00,
+            quota: false,
+            coupon: [
+                {
+                    type: "full-reduce",
+                    amount: 48,
+                    discount: 3,
+                    beginning: "2017.08.07",
+                    ending: "2018.02.07"
+                }
+            ]
+        },
+        {
+            store: {
+                type: "tmall",
+                name: "美的官方旗舰店"
+            },
+            id: "549871414689",
+            title: "Midea/美的 MG80V530WD 8公斤变频滚筒洗衣机全自动家用静音智能",
+            services: ["credit", "electric"],
+            type: [{
+                title: "颜色分类",
+                value: "白色"
+            }],
+            primePrice: 2798.00,
+            unitPrice: 1799.00,
+            quota: false,
+            coupon: null
+        }
+    ]
+}

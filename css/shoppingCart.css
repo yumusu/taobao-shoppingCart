@@ -220,6 +220,9 @@ div.cartContainer .cartFilterBar .filterBottomLine .filterLine{
 
 /* cartMain 购物车主部分 */
 
+div.cartContainer .cartMain .cartHeading{
+    height: 50px;
+}
 /* cartHeading 购物车表头选择框 */
 div.cartContainer .cartMain .cartHeading .allSelect{
     float: left;
@@ -246,7 +249,9 @@ div.cartContainer .cartMain .cartHeading .goodsInfo{
     width: 302px;
     height: 50px;
     line-height: 50px;
-    background: #ddd;
+}
+div.cartContainer .cartMain .cartHeading .goodsInfo .goodsInfoInner{
+    padding-left: 90px;
 }
 
 /* cartHeading 购物车表头类型选择 */
@@ -254,5 +259,132 @@ div.cartContainer .cartMain .cartHeading .typeSelected{
     float: left;
     width: 192px;
     height: 50px;
-    background: #aaa;
+}
+
+/* cartHeading 购物车表头单价 */
+div.cartContainer .cartMain .cartHeading .unitPrice{
+    float: left;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* cartHeading 购物车表头数量 */
+div.cartContainer .cartMain .cartHeading .goodsCount{
+    float: left;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* cartHeading 购物车表头金额 */
+div.cartContainer .cartMain .cartHeading .amount{
+    float: left;
+    width: 105px;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* cartHeading 购物车表头操作 */
+div.cartContainer .cartMain .cartHeading .operate{
+    float: left;
+    width: 99px;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* 购物车商品列表开始 */
+
+/* 店铺信息 */
+div.orderList .orderItem .storeInfo{
+    height: 38px;
+    line-height: 38px;
+}
+div.orderList .orderItem .storeInfo .storeAllSelect{
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin: 13px 0 0 15px;
+    background: url('../widget/cartMain.png') no-repeat 0 0;
+}
+div.orderList .orderItem .storeInfo .storeIcon{
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin: 11px 5px 0 8px;
+    background: url('../widget/cartMain.png') no-repeat 0px -38px;
+}
+div.orderList .orderItem .storeInfo .storeName{
+    float: left;
+    font-size: 14px;
+}
+div.orderList .orderItem .storeInfo .wangwangIcon{
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 6px 0 0 15px;
+    background: url('../images/wangwangicon.gif') no-repeat -82px 0px;
+}
+
+/* 商品列表 */
+div.orderList .orderItem .goodsList{
+    border: 1px solid #ccc;
+}
+div.orderList .orderItem .goodsList .goodsItem{
+    width: 100%;
+    height: 120px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox */
+    -webkit-box-sizing: border-box; /* Safari */
+    border-bottom: 1px solid #e7e7e7;
+    background: #fcfcfc;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .container{
+    position: relative;
+    min-height: 99px;
+    padding-top: 20px;
+}
+/* 复选框 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsSelect{
+    float: left;
+    width: 45px;
+    min-height: 119px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsSelect .goodsSelectIcon{
+    float: right;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    background: url('../widget/cartMain.png') no-repeat 0 0;
+}
+/* 图片和标题 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsTitle{
+    float: left;
+    width: 302px;
+    min-height: 119px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsTitle .goodsPic{
+    float: left;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #eee;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsTitle .goodsTitleContainer{
+    min-height: 99px;
+    margin-left: 90px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsTitle .goodsTitleContainer .goodsTitleText a:hover{
+    color: #f60;
+    text-decoration: underline;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsTitle .goodsTitleContainer .serviceIcon{
+    position: absolute;
+    bottom: 18px;
+    height: 16px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsTitle .goodsTitleContainer .serviceIcon span{
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
 }
