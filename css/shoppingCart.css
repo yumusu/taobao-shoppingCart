@@ -40,7 +40,7 @@ div.mainHeadingSearchPanel{
     position: absolute;
     top: 20px;
     right: 0;
-    box-sizing: border-box;
+    boxbox-sizing: border-box;
     -moz-box-sizing: border-box; /* Firefox */
     -webkit-box-sizing: border-box; /* Safari */
     width: 515px;
@@ -295,6 +295,9 @@ div.cartContainer .cartMain .cartHeading .operate{
 
 /* 购物车商品列表开始 */
 
+div.orderList .orderItem{
+    margin-bottom: 15px;
+}
 /* 店铺信息 */
 div.orderList .orderItem .storeInfo{
     height: 38px;
@@ -312,7 +315,12 @@ div.orderList .orderItem .storeInfo .storeIcon{
     width: 16px;
     height: 16px;
     margin: 11px 5px 0 8px;
+}
+div.orderList .orderItem .storeInfo .tmall{
     background: url('../widget/cartMain.png') no-repeat 0px -38px;
+}
+div.orderList .orderItem .storeInfo .gold{
+    background: url('../widget/cartMain.png') no-repeat 0px -58px;
 }
 div.orderList .orderItem .storeInfo .storeName{
     float: left;
@@ -372,6 +380,7 @@ div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsTitle .
 div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsTitle .goodsTitleContainer{
     min-height: 99px;
     margin-left: 90px;
+    padding-right: 25px;
 }
 div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsTitle .goodsTitleContainer .goodsTitleText a:hover{
     color: #f60;
@@ -387,4 +396,187 @@ div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsTitle .
     width: 16px;
     height: 16px;
     margin-right: 5px;
+}
+
+/* 颜色分类 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsType{
+    float: left;
+    width: 172px;
+    min-height: 119px;
+    margin-right: 20px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsType .container{
+    width: 172px;
+    min-height: 96px;
+    border: 1px dashed transparent;
+}
+/* 商品列表悬浮的时候，出现编辑图标，提示编辑 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsType .hintEdit{
+    border-color: #dbebfe;
+}
+/* 类型悬浮的时候，出现编辑文字，高亮编辑 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsType .showEdit{
+    border-color: #f60;
+    background: #fff;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsType .container p{
+    margin: 0 5px 0 15px;
+    color: #9c9c9c;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsType .container .edit{
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    font-size: 0;
+}
+/* 商品列表悬浮时显示编辑图标 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsType .hintEdit .edit{
+    width: 19px;
+    height: 17px;
+    background: url('../widget/cartMain.png') no-repeat 0px -139px;
+    cursor: pointer;
+}
+/* 类型悬浮时显示编辑文字 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .goodsType .showEdit .edit{
+    width: auto;
+    height: auto;
+    background: #f60;
+    color: #fff;
+    padding: 2px 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* 单价 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .unitPrice{
+    float: left;
+    width: 120px;
+    min-height: 119px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .unitPrice .container{
+    padding-top: 15px;
+    padding-left: 28px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .unitPrice .container .primePriceNum{
+    color: #9c9c9c;
+    text-decoration: line-through;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .unitPrice .container .unitPriceNum{
+    font-weight: bold;
+}
+
+/* 数量 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count{
+    float: left;
+    width: 120px;
+    min-height: 119px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .container{
+    margin-left: 25px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .container .countPanel{
+    height: 25px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .container span{
+    float: left;
+    width: 17px;
+    height: 23px;
+    line-height: 23px;
+    text-align: center;
+    background: #f0f0f0;
+    border: 1px solid #e5e5e5;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .container .number{
+    float: left;
+    width: 40px;
+    height: 23px;
+    border: 1px solid #aaa;
+    text-align: center;
+    font-size: 10px;
+}
+/* 超出库存提示 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .container .countWarning{
+    width: 58px;
+    padding: 5px 10px;
+    background: #fff0e7;
+    color: #f40;
+    border: 1px solid #ffe1d3;
+    text-align: center;
+}
+/* 没有限购、超出内存信息的话隐藏 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .container .hide{
+    display: none;
+}
+
+/* 金额 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .amount{
+    float: left;
+    width: 125px;
+    min-height: 119px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .amount .container{
+    margin-left: 28px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .amount .amountNum{
+    font-weight: bold;
+    color: #f40;
+}
+
+/* 操作 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .operate{
+    float: left;
+    width: 99px;
+    min-height: 119px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .operate .container{
+    margin-left: 10px;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .operate .container p{
+    padding-bottom: 10px;
+}
+
+/* 购物车底部浮动条 */
+div.cartFooter{
+    position: relative;
+    height: 50px;
+    margin: 0 auto;
+}
+div.cartFooter .cartFooterContainer{
+    width: 1100px;
+    height: 50px;
+    background: #e5e5e5;
+    margin: 0 auto;
+}
+/* 全选 */
+div.cartFooter .cartFooterContainer .selectAll{
+    float: left;
+    margin-left: 5px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+div.cartFooter .cartFooterContainer .selectAll .selectAllIcon{
+    float: left;
+    width: 15px;
+    height: 13px;
+    background: url('../widget/cartMain.png') no-repeat 0 0;
+    margin-top: 18px;
+}
+div.cartFooter .cartFooterContainer .selectAll span{
+    float: left;
+    margin-left: 3px;
+}
+/* 操作 */
+div.cartFooter .cartFooterContainer .operate{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+}
+div.cartFooter .cartFooterContainer .operate a{
+    float: left;
+    margin-left: 25px;
+}
+div.cartFooter .cartFooterContainer .operate a:hover{
+    color: #f40;
+    text-decoration: underline;
 }
