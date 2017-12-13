@@ -417,7 +417,23 @@ var GoodsInformation = {
             store: {
                 type: "tmall",
                 name: "美的官方旗舰店",
-                id: 10001
+                id: 10001,
+                coupon: [
+                    {
+                        type: "full-reduce",
+                        amount: 300,
+                        discount: 10,
+                        beginning: "2017.12.12",
+                        ending: "2017.12.12"
+                    },
+                    {
+                        type: "full-reduce",
+                        amount: 1000,
+                        discount: 20,
+                        beginning: "2017.08.07",
+                        ending: "2020.12.31"
+                    }
+                ]
             },
             id: "529472763342",
             title: "Midea/美的 WH415E2g 电热水壶防烫电烧水壶304不锈钢特价",
@@ -429,14 +445,14 @@ var GoodsInformation = {
             primePrice: null,
             unitPrice: 99.01,
             quota: false,
-            coupon: null,
             stock: 10
         },
         {
             store: {
                 type: "gold",
                 name: "手机壳文化",
-                id: 20001
+                id: 20001,
+                coupon: null
             },
             id: "541868015231",
             title: "华硕ZenPad 3S 10全包边皮套Z500M平板电脑保护套P027支架外壳9.7",
@@ -448,14 +464,29 @@ var GoodsInformation = {
             primePrice: 35.00,
             unitPrice: 32.00,
             quota: false,
-            coupon: null,
             stock: 93
         },
         {
             store: {
                 type: "tmall",
                 name: "美的官方旗舰店",
-                id: 10001
+                id: 10001,
+                coupon: [
+                    {
+                        type: "full-reduce",
+                        amount: 300,
+                        discount: 10,
+                        beginning: "2017.12.12",
+                        ending: "2017.12.12"
+                    },
+                    {
+                        type: "full-reduce",
+                        amount: 1000,
+                        discount: 20,
+                        beginning: "2017.08.07",
+                        ending: "2020.12.31"
+                    }
+                ]
             },
             id: "527067602470",
             title: "Midea/美的 KFR-26GW/WCBD3@ 大1匹智能静音壁挂冷暖空调挂机",
@@ -467,14 +498,22 @@ var GoodsInformation = {
             primePrice: 2199.00,
             unitPrice: 1999.00,
             quota: 5,
-            coupon: null,
             stock: 5
         },
         {
             store: {
                 type: "tmall",
                 name: "醉牛数码专营店",
-                id: 10002
+                id: 10002,
+                coupon: [
+                    {
+                        type: "full-reduce",
+                        amount: 48,
+                        discount: 3,
+                        beginning: "2017.08.07",
+                        ending: "2018.02.07"
+                    }
+                ]
             },
             id: "539887265910",
             title: "YC2 华硕Zenpad 3S 10 Z500M钢化玻璃膜 ASUS Z500M钢化膜 保护膜",
@@ -486,22 +525,29 @@ var GoodsInformation = {
             primePrice: 30.00,
             unitPrice: 25.00,
             quota: false,
-            coupon: [
-                {
-                    type: "full-reduce",
-                    amount: 48,
-                    discount: 3,
-                    beginning: "2017.08.07",
-                    ending: "2018.02.07"
-                }
-            ],
             stock: 8
         },
         {
             store: {
                 type: "tmall",
                 name: "美的官方旗舰店",
-                id: 10001
+                id: 10001,
+                coupon: [
+                    {
+                        type: "full-reduce",
+                        amount: 300,
+                        discount: 10,
+                        beginning: "2017.12.12",
+                        ending: "2017.12.12"
+                    },
+                    {
+                        type: "full-reduce",
+                        amount: 1000,
+                        discount: 20,
+                        beginning: "2017.08.07",
+                        ending: "2020.12.31"
+                    }
+                ]
             },
             id: "549871414689",
             title: "Midea/美的 MG80V530WD 8公斤变频滚筒洗衣机全自动家用静音智能",
@@ -513,7 +559,6 @@ var GoodsInformation = {
             primePrice: 2798.00,
             unitPrice: 1799.00,
             quota: false,
-            coupon: null,
             stock: 10000
         }
     ]

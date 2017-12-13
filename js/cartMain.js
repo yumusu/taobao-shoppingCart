@@ -19,6 +19,8 @@ CartMain.prototype = {
 
         // 颜色分类悬浮事件
         mthis.goodsTypeHover();
+        // 店铺优惠券点击显示
+        mthis.couponClickShow();
     },
     // 筛选类型悬浮，下面的线的动画效果
     filterTypeHover: function(){
@@ -92,6 +94,54 @@ CartMain.prototype = {
         $html += '    <span>' + store.name + '</span>';
         $html += '</div>';
         $html += '<div class="wangwangIcon"></div>';
+        if(store.coupon){
+            var couponL = store.coupon.length;
+            $html += '<div class="coupon" data-show=0>';
+            $html += '    <span class="couponText">优惠券</span>';
+            $html += '    <i class="arrowSwitch drop"></i>';
+            $html += '    <div class="couponDetail">';
+            $html += '        <i class="close"></i>';
+            $html += '        <i class="horn"></i>';
+            $html += '        <div>';
+            $html += '            <div class="couponCount">';
+            $html += '                <i class="trumpet"></i>';
+            $html += '                <span>已领取</span>';
+            $html += '                <span>0</span>';
+            $html += '                <span>优惠券，有新优惠券可领取</span>';
+            $html += '            </div>';
+            $html += '            <div class="couponList">';
+            $html += '                <ul>';
+            for(let i = 0; i<couponL; i++){
+                $html += '              <li class="couponListLi">';
+                $html += '                  <div class="couponPic">';
+                $html += '                      ￥<span class="couponPicNum">' + store.coupon[i].discount + '</span>';
+                $html += '                  </div>';
+                $html += '                  <div class="couponDiscountInfo">';
+                $html += '                      <div class="couponDiscountText">';
+                $html += '                          <p class="couponTitle">';
+                $html += '                              <span>优惠券&nbsp;满</span>';
+                $html += '                              <span class="amount">' + store.coupon[i].amount + '</span>';
+                $html += '                              <span>减</span>';
+                $html += '                              <span class="discount">' + store.coupon[i].discount + '</span>';
+                $html += '                          </p>';
+                $html += '                          <p class="couponDate">';
+                $html += '                              <span>' + store.coupon[i].beginning + '</span>';
+                $html += '                              <span>-</span>';
+                $html += '                              <span>' + store.coupon[i].ending + '</span>';
+                $html += '                          </p>';
+                $html += '                      </div>';
+                $html += '                      <div class="couponGet">';
+                $html += '                          <div class="couponGetBtn">领取</div>';
+                $html += '                      </div>';
+                $html += '                  </div>';
+                $html += '              </li>';
+            }
+            $html += '                </ul>';
+            $html += '            </div>';
+            $html += '        </div>';
+            $html += '    </div>';
+            $html += '</div>';
+        }
 
         return $html;
     },
@@ -211,6 +261,21 @@ CartMain.prototype = {
             $(this).addClass('showEdit');
         },function(){
             $(this).removeClass('showEdit');
+        })
+    },
+    // 优惠券点击事件
+    couponClickShow: function(){
+        var mthis = this;
+        var coupons = mthis.orderList.find('.coupon');
+        coupons.on('click', function(){
+            var couponDetail = $(this).find('.couponDetail');
+            if($(this).attr('data-show') == 0){
+                couponDetail.show();
+                $(this).attr('data-show', 1);
+            }else{
+                couponDetail.hide();
+                $(this).attr('data-show', 0);
+            }
         })
     }
 }
