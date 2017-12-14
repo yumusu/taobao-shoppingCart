@@ -1,8 +1,17 @@
+function sto(){
+    this.set = function( name, value ){
+        sessionStorage.setItem( name, value );
+    }
+    this.get = function( name ){
+        sessionStorage.getItem( name );
+    }
+}
 function CartMain( obj ){
     // 循环设置属性
     for( let i in obj){
         this[i] = obj[i];
     }
+    this.sto = new sto();
     this.init();
 }
 
@@ -21,6 +30,11 @@ CartMain.prototype = {
         mthis.goodsTypeHover();
         // 店铺优惠券点击显示
         mthis.couponClickShow();
+
+        // 商品复选框点击事件
+        mthis.goodsSelectChb();
+        // 店铺复选框点击事件
+        mthis.storeSelectChb();
     },
     // 筛选类型悬浮，下面的线的动画效果
     filterTypeHover: function(){
@@ -87,7 +101,7 @@ CartMain.prototype = {
     spliceStoreInfo: function( store ){
         var mthis = this;
         var $html = '';
-        $html += '<div class="storeAllSelect"></div>';
+        $html += '<div class="storeAllSelect" data-storeall="0"></div>';
         $html += '<div class="storeIcon ' + store.type + '"></div>';
         $html += '<div class="storeName">';
         $html += '    <span>店铺：</span>';
@@ -154,7 +168,7 @@ CartMain.prototype = {
         $html += '        <ul>';
         $html += '            <li class="goodsSelect">';
         $html += '                <div class="container">';
-        $html += '                    <div class="goodsSelectIcon"></div>';
+        $html += '                    <div class="goodsSelectIcon" data-selected="0"></div>';
         $html += '                </div>';
         $html += '            </li>';
         $html += '            <li class="goodsTitle">';
@@ -277,12 +291,106 @@ CartMain.prototype = {
                 $(this).attr('data-show', 0);
             }
         })
+        // 获取优惠券详情，阻止事件冒泡，防止点击优惠券详情之后关闭
+        var couponDetail = mthis.orderList.find('.couponDetail');
+        couponDetail.on('click', function(e){
+            // 兼容性写法
+            if( e && e.stopPropagation ){
+                e.stopPropagation();  // W3C标准
+            }else{
+                window.event.cancelBubble = true;  // ie写法
+            }
+        })
+    },
+    // 商品选中事件
+    goodsSelectChb: function(){
+        var mthis = this;
+        var goodsItems = mthis.orderList.find('.goodsItem');
+        var goodsChb = goodsItems.find('.goodsSelectIcon');
+        goodsChb.on('click', function(){
+            if($(this).attr('data-selected') == 0){
+                $(this).addClass('selected')
+                $(this).attr('data-selected', 1);
+            }else{
+                $(this).removeClass('selected')
+                $(this).attr('data-selected', 0);
+            }
+
+            mthis.storeGoodsIsAllS($(this).parents('.goodsItem'));
+        })
+    },
+    // 判断该店铺商品是否已全部选中
+    storeGoodsIsAllS: function( goods ){
+        var storeSelectIcon = goods.parents('.orderItem').find('.storeAllSelect');
+        // 通过传入的商品，获取该店铺所有商品
+        var storeGoods = goods.parent().children('.goodsItem');
+        var storeGoodsL = storeGoods.length;
+        for(let i=0; i<storeGoodsL; i++){
+            var goodsSelectStatus = storeGoods.eq(i).find('.goodsSelectIcon').attr('data-selected')
+            // console.log('status:' + goodsSelectStatus)
+            if(goodsSelectStatus == 0){
+                storeSelectIcon.removeClass('selected');
+                storeSelectIcon.attr('data-storeall', 0);
+                return false;
+            }
+        }
+        storeSelectIcon.addClass('selected');
+        storeSelectIcon.attr('data-storeall', 1);
+    },
+    // 店铺全选点击事件
+    storeSelectChb: function(){
+        var mthis = this;
+        var orderItems = mthis.orderList.find('.orderItem');
+        var orderChb = orderItems.find('.storeAllSelect');
+        orderChb.on('click', function(){
+            if($(this).attr('data-storeall') == 0){
+                var storeGoods = $(this).parents('.orderItem').find('.goodsSelectIcon');
+                var storeGoodsL = storeGoods.length;
+                for(let i=0; i< storeGoodsL; i++){
+                    storeGoods.eq(i).addClass('selected');
+                    storeGoods.eq(i).attr('data-selected', 1);
+                }
+
+                $(this).addClass('selected')
+                $(this).attr('data-storeall', 1);
+            }else{
+                var storeGoods = $(this).parents('.orderItem').find('.goodsSelectIcon');
+                var storeGoodsL = storeGoods.length;
+                for(let i=0; i< storeGoodsL; i++){
+                    storeGoods.eq(i).removeClass('selected');
+                    storeGoods.eq(i).attr('data-selected', 0);
+                }
+
+                $(this).removeClass('selected')
+                $(this).attr('data-storeall', 0);
+            }
+
+            mthis.storeIsAllS();
+        })
+    },
+    // 判断店铺是否已全部选中
+    storeIsAllS: function(){
+        var mthis = this;
+        // mthis.cartHeadingAllSelectId 顶部全选按钮
+        var stores = mthis.orderList.children('.orderItem');
+        var storesL = stores.length;
+        for(let i=0; i<storesL; i++){
+            var storeStatus = stores.eq(i).find('.storeAllSelect').attr('data-storeall');
+            if(storeStatus == 0){
+                mthis.cartHeadingAllSelectId.removeClass('selected');
+                mthis.cartHeadingAllSelectId.attr('data-all', 0);
+                return false;
+            }
+        }
+        mthis.cartHeadingAllSelectId.addClass('selected');
+        mthis.cartHeadingAllSelectId.attr('data-all', 1)
     }
 }
 
 var obj = {
     cartFilterTypeUlId: $("#cartFilterTypeUlId"),
-    orderList: $("#orderList")
+    orderList: $("#orderList"),
+    cartHeadingAllSelectId: $('#cartHeadingAllSelectId')
 }
 
 new CartMain( obj );
