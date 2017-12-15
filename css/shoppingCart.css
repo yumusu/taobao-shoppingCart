@@ -624,6 +624,14 @@ div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .conta
     background: #f0f0f0;
     border: 1px solid #e5e5e5;
 }
+/* 减号加号和数字 */
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .container .reduce{
+    color: #e5e5e5;
+    cursor: no-drop;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .container .increase{
+    cursor: pointer;
+}
 div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .container .number{
     float: left;
     width: 40px;
@@ -671,6 +679,11 @@ div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .operate .con
 }
 div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .operate .container p{
     padding-bottom: 10px;
+    cursor: pointer;
+}
+div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .operate .container p:hover{
+    color: #f40;
+    text-decoration: underline;
 }
 
 /* 购物车底部浮动条 */
@@ -704,6 +717,9 @@ div.cartFooter .cartFooterContainer .selectAll .selectAllIcon{
     background: url('../widget/cartMain.png') no-repeat 0 0;
     margin-top: 18px;
     cursor: pointer;
+}
+div.cartFooter .cartFooterContainer .selectAll .selected{
+    background-position: 0 -20px;
 }
 div.cartFooter .cartFooterContainer .selectAll span{
     float: left;

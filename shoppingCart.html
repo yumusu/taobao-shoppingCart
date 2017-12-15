@@ -291,7 +291,7 @@
                     </ul>
                     <div class="filterShortcuts">
                         <span class="filterText">已选商品（不含运费）</span>
-                        <span class="filterNumber">0.00</span>
+                        <span id="filterAmount" class="filterNumber">0.00</span>
                         <input class="filterButton" type="button" value="结算">
                     </div>
                     <div class="filterBottomLine">
@@ -483,7 +483,7 @@
                     </div>
                 </div>
                 <!-- 购物车底部浮动条 -->
-                <div id="abcdefg" class="cartFooter">
+                <div id="cartFooter" class="cartFooter">
                     <div class="cartFooterContainer">
                         <div class="selectAll">
                             <i class="selectAllIcon"></i>
@@ -503,7 +503,7 @@
                         <div class="cartFooterRight">
                             <div class="goodsCount">
                                 <span>已选商品</span>
-                                <span class="goodsCountNum">0</span>
+                                <span id="goodsCountNum" class="goodsCountNum">0</span>
                                 <span>件</span>
                                 <i class="arrowSwitch"></i>
                             </div>
@@ -511,7 +511,7 @@
                                 <span class="goodsAmountText">合计（不含运费）：</span>
                                 <div class="goodsAmountNum">
                                     <span>￥</span>
-                                    <span class="number">25.00</span>
+                                    <span id="goodsAmountNumber" class="number">0.00</span>
                                 </div>
                             </div>
                             <div class="checkOut">
