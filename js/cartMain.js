@@ -34,6 +34,14 @@ CartMain.prototype = {
         mthis.reduceClick();
         // 加号点击事件
         mthis.increaseClick();
+        // 数字输入事件
+        mthis.numberInput();
+
+        // 滚动设置底栏position
+        mthis.setFooterPosition();
+
+        // 商品头图悬浮显示大图
+        mthis.picHoverShow();
     },
     // 筛选类型悬浮，下面的线的动画效果
     filterTypeHover: function(){
@@ -288,7 +296,8 @@ CartMain.prototype = {
                 .data({
                     'data-id': goodsI[goodsIndex].id,
                     'data-num': 1,
-                    'data-unitPrice': goodsI[goodsIndex].unitPrice
+                    'data-unitPrice': goodsI[goodsIndex].unitPrice,
+                    'data-quota': goodsI[goodsIndex].quota
                 }
             )
         }
@@ -489,6 +498,7 @@ CartMain.prototype = {
         var count = 0;
         var amount = 0;
         var goodsItems = mthis.orderList.find('.goodsItem');
+        mthis.filterTypeNumber.html(goodsItems.length);
         var goodsChb = goodsItems.find('.goodsSelectIcon');
         var goodsChbL = goodsChb.length;
         for(let i=0; i<goodsChbL; i++){
@@ -499,6 +509,12 @@ CartMain.prototype = {
                 count += currentChb.data('data-num');
                 amount += currentChb.data('data-unitPrice') * currentChb.data('data-num');
             }
+        }
+
+        if(count >= 1){
+            mthis.filterButton.css('background-color', '#f40');
+        }else{
+            mthis.filterButton.css('background-color', '#aaa');
         }
 
         mthis.cartHeadingAllSelectId.data('count', count);
@@ -529,6 +545,9 @@ CartMain.prototype = {
             
             mthis.storeGoodsIsAllS(storeOtherGoods.eq(0));
             mthis.calcGoods();
+
+            // 重新计算orderList相对于浏览器底部的位置
+            mthis.setFooterPosition();
         })
     },
     // 减号点击事件
@@ -539,7 +558,10 @@ CartMain.prototype = {
         reduce.on('click', function(){
             var goodsChb = $(this).parents('.count').siblings('.goodsSelect').find('.goodsSelectIcon');
             var inputNumber = $(this).siblings('.number');
+            var increase = $(this).siblings('.increase');
             var goodsNum = goodsChb.data('data-num');
+            var goodsQuota = goodsChb.data('data-quota');
+
             if(goodsNum <= 1){
                 return;
             }else{
@@ -556,6 +578,12 @@ CartMain.prototype = {
             }
             inputNumber.prop('value', newNum);
 
+            if(newNum < goodsQuota){
+                increase.css({
+                    'cursor': 'pointer',
+                    'color': '#000'
+                })
+            }
             // 计算商品价格
             mthis.calcGoods();
         });
@@ -570,11 +598,20 @@ CartMain.prototype = {
             var inputNumber = $(this).siblings('.number');      // 中间的数字输入框
             var reduce = $(this).siblings('.reduce');      // 中间的数字输入框
             var goodsNum = goodsChb.data('data-num');
+            var goodsQuota = goodsChb.data('data-quota');
 
             goodsChb.data({'data-num': ++goodsNum});
 
             // 获取新的数量
             var newNum = goodsChb.data('data-num');
+            if( goodsQuota && newNum >= goodsQuota ){
+                goodsChb.data({'data-num': goodsQuota});
+                newNum = goodsChb.data('data-num');
+                $(this).css({
+                    'cursor': 'no-drop',
+                    'color': '#e5e5e5'
+                })
+            };
             // 设置数字输入框的文字
             inputNumber.prop('value', newNum);
             if(newNum > 1){
@@ -587,6 +624,122 @@ CartMain.prototype = {
             // 计算商品价格
             mthis.calcGoods();
         });
+    },
+    // 数字输入事件
+    numberInput: function(){
+        var mthis = this;
+        var goods = mthis.orderList.find('.goodsItem');
+        var number = goods.find('.number');
+        number.on('focus', function(){
+            var goodsChb = $(this).parents('.count').siblings('.goodsSelect').find('.goodsSelectIcon');
+            var reduce = $(this).siblings('.reduce');
+            var increase = $(this).siblings('.increase');
+
+            var goodsNum = goodsChb.data('data-num');
+            var goodsQuota = goodsChb.data('data-quota');
+
+            // 获得焦点之后，获取原value
+            var oriValue = $(this).prop('value');
+            $(this).on('input', function(){
+                // 文字改变之后获取新文本
+                // 如果新文本可以被转换为数字，就给原value赋值
+                // 如果不能，就设置value仍为原value
+                var newValue = $(this).prop('value');
+                if(newValue == ''){
+                    // 为空的情况，设置value,data-num,oriValue都为1
+                    $(this).prop('value', 1);
+                    goodsChb.data({'data-num': 1});
+                    oriValue = 1;
+                    reduce.css({
+                        'cursor': 'no-drop',
+                        'color': '#e5e5e5'
+                    });
+                    increase.css({
+                        'cursor': 'pointer',
+                        'color': '#000'
+                    });
+                }else if(!Number(newValue)){
+                    // 转换失败的情况
+                    $(this).prop('value', oriValue);
+                }else{
+                    // 转换成功的情况
+                    var successValue = Number($(this).prop('value'));   // 转换成功的value
+                    
+                    oriValue = successValue;
+                    if(successValue <= 1){
+                        reduce.css({
+                            'cursor': 'no-drop',
+                            'color': '#e5e5e5'
+                        })
+                    }else{
+                        reduce.css({
+                            'cursor': 'pointer',
+                            'color': '#000'
+                        });
+                        increase.css({
+                            'cursor': 'pointer',
+                            'color': '#000'
+                        });
+                        // 如果转换成功但是超库存的情况
+                        if(goodsQuota && successValue >= goodsQuota){
+                            increase.css({
+                                'cursor': 'no-drop',
+                                'color': '#e5e5e5'
+                            });
+                            oriValue = goodsQuota;
+                            $(this).prop('value', goodsQuota);
+                        }
+                    }
+
+                    // 设置'data-num'之后就执行重新计算价格事件
+                    goodsChb.data({'data-num': oriValue});
+                    mthis.calcGoods();
+                }
+            })
+        })
+    },
+    // 滚动设置底栏位置
+    setFooterPosition: function(){
+        var mthis = this;
+        // 单独写成一个方法，然后执行一次
+        // 为了在点击删除的时候调用可以直接执行
+        var set = function(){
+            // 浏览器高度，也就是可视区域高度
+            var visibleH = document.documentElement.clientHeight;
+            // 元素相对于浏览器顶部的距离
+            var clientTop = mthis.orderList.offset().top - $(window).scrollTop();
+            // 元素底部相对于浏览器底部的距离
+            var clientBottom = visibleH - clientTop - mthis.orderList.height();
+            if(clientBottom >= 65){
+                mthis.cartFooter.find('.cartFooterContainer').css('position', 'static');
+            }else{
+                mthis.cartFooter.find('.cartFooterContainer').css('position', 'fixed');
+            }
+        }
+        set();
+        // 滚动事件
+        $(window).scroll(function(){
+            set();
+        })
+    },
+    // 商品头图悬浮显示大图
+    picHoverShow: function(){
+        var mthis = this;
+        var goodsPic = mthis.orderList.find('.goodsPic');
+        goodsPic.hover(function(){
+            var goodsChb = $(this).parents('.goodsItem').find('.goodsSelectIcon');
+            var offsetT = $(this).offset().top - 30;
+            var offsetL = $(this).offset().left + $(this).width() + 10;
+            mthis.picZoom
+                .show()
+                .css({
+                    'top': offsetT + 'px',
+                    'left': offsetL + 'px'
+                })
+                .find('img').prop('src', './images/' + goodsChb.data('data-id') + '.jpg');
+        },function(){
+            mthis.picZoom.hide()
+        })
     }
 }
 
@@ -597,7 +750,10 @@ var obj = {
     cartFooter: $('#cartFooter'),
     goodsCountNum: $('#goodsCountNum'),      // 底栏的商品数量
     goodsAmountNumber: $('#goodsAmountNumber'),      // 底栏的商品总金额
-    filterAmount: $('#filterAmount')        // 顶栏的商品总金额
+    filterAmount: $('#filterAmount'),        // 顶栏的商品总金额
+    filterTypeNumber: $('#filterTypeNumber'),    // 顶部商品数量
+    filterButton: $('#filterButton'),
+    picZoom: $('#picZoom')      // 悬浮的大图
 }
 
 new CartMain( obj );

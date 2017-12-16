@@ -560,6 +560,37 @@ var GoodsInformation = {
             unitPrice: 1799.00,
             quota: false,
             stock: 10000
+        },
+        {
+            store: {
+                type: "tmall",
+                name: "醉牛数码专营店",
+                id: 10002,
+                coupon: [
+                    {
+                        type: "full-reduce",
+                        amount: 48,
+                        discount: 3,
+                        beginning: "2017.08.07",
+                        ending: "2018.02.07"
+                    }
+                ]
+            },
+            id: "552524584369",
+            title: "type-c转接头note3小米6/mix数据线otg手机5x充电器nova2s华为p10",
+            services: ["credit", "return", "protect"],
+            type: [{
+                title: "长度",
+                value: "其他"
+            },
+            {
+                title: "颜色分类",
+                value: "烤漆塑料-白色+收纳瓶"
+            }],
+            primePrice: 9.50,
+            unitPrice: 6.50,
+            quota: false,
+            stock: 8
         }
     ]
 }

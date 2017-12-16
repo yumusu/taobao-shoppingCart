@@ -627,9 +627,21 @@ div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .conta
 /* 减号加号和数字 */
 div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .container .reduce{
     color: #e5e5e5;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     cursor: no-drop;
 }
 div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .container .increase{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     cursor: pointer;
 }
 div.orderList .orderItem .goodsList .goodsItem .goodsItemContainer .count .container .number{
@@ -803,4 +815,26 @@ div.cartFooter .cartFooterContainer .cartFooterRight .checkOut .checkOutBtn{
     color: #fff;
     background: #f40;
     cursor: pointer;
+}
+
+/* 商品悬浮大图 */
+div.picZoom{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 240px;
+    height: 240px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    display: none;
+    z-index: 100;
+}
+div.picZoom .leftArrow{
+    position: absolute;
+    top: 60px;
+    left: -8px;
+    width: 9px;
+    height: 16px;
+    background: url('../widget/cartMain.png') no-repeat -135px 0px;
 }
