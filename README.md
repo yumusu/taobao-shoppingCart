@@ -4,6 +4,8 @@ date: 2017-12-07 17:10:11
 tags:
 ---
 
+**Demo:** [https://yumusu.github.io/shoppingCart/shoppingCart.html](https://yumusu.github.io/shoppingCart/shoppingCart.html)
+
 ## 设置列表横向排列
 
 给`<li>`标签添加`float`
@@ -253,6 +255,3 @@ $(window).scroll(function(){
     mthis.cartFooter.css('position', 'fixed');
   }
 })
-
-
-
