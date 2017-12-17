@@ -1,0 +1,190 @@
+div.recommend{
+    width: 1100px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+div.recommend .recommendTitle{
+    position: relative;
+    height: 30px;
+    line-height: 25px;
+    border-bottom: 2px solid #e6e6e6;
+}
+div.recommend .recommendTitle ul.titleUl li{
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 10px;
+    border-right: 1px solid #e8e8e8;
+    cursor: pointer;
+}
+div.recommend .recommendTitle ul.titleUl li.visited{
+    border-right: none;
+}
+div.recommend .recommendTitle ul.titleUl li.selected{
+    color: #f40;
+}
+/* 下面的线 */
+div.recommend .recommendTitle .titleLine{
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    width: 96px;
+    height: 2px;
+    background: #f40;
+}
+
+/* 推荐主内容 */
+div.recommend .content{
+    position: relative;
+    width: 1100px;
+    height: 340px;
+    margin: 0 auto;
+    margin-top: 25px;
+    overflow: hidden;
+}
+/* 左边箭头 */
+div.recommend .content .leftArrow{
+    position: absolute;
+    z-index: 99;
+    top: 80px;
+    left: -50px;
+    width: 50px;
+    height: 50px;
+    background: url('../widget/recommendArrow.png') no-repeat 0 0;
+    cursor: pointer;
+}
+div.recommend .content .leftArrow:hover{
+    background-position: -50px 0;
+}
+/* 右边箭头 */
+div.recommend .content .rightArrow{
+    position: absolute;
+    z-index: 99;
+    top: 80px;
+    right: -50px;
+    width: 50px;
+    height: 50px;
+    background: url('../widget/recommendArrow.png') no-repeat 0 -50px;
+    cursor: pointer;
+}
+div.recommend .content .rightArrow:hover{
+    background-position: -50px -50px;
+}
+/* page容器 */
+div.recommend .content .page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+}
+div.recommend .content .page.current{
+    display: block;
+}
+div.recommend .content .recommendGoodsLi{
+    float: left;
+    width: 204px;
+    margin-right: 20px;
+}
+div.recommend .content .recommendGoodsLi .goodsPic img{
+    width: 204px;
+    height: 204px;
+}
+
+/* 价格 */
+div.recommend .content .recommendGoodsLi .goodsPrice{
+    position: relative;
+    text-align: center;
+}
+div.recommend .content .recommendGoodsLi .goodsPrice a{
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    height: 40px;
+    padding: 0 15px;
+    line-height: 40px;
+    font-size: 0;
+    font-weight: bold;
+    color: #f40;
+    background: #fff;
+    text-align: center;
+}
+div.recommend .content .recommendGoodsLi .goodsPrice a .primePrice{
+    font-size: 18px;
+}
+div.recommend .content .recommendGoodsLi .goodsPrice a .unitPrice{
+    font-size: 12px;
+    color: #ccc;
+    text-decoration: line-through;
+    vertical-align: top;
+}
+/* 价格旁边的线 */
+div.recommend .content .recommendGoodsLi .goodsPrice .line{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 1px;
+    background: #e8e8e8;
+}
+
+/* 商品标题 */
+div.recommend .content .recommendGoodsLi .goodsTitle{
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #3c3c3c;
+}
+
+/* 商品其他信息 */
+div.recommend .content .recommendGoodsLi .goodsInfo{
+    padding: 0 8px;
+}
+div.recommend .content .recommendGoodsLi .goodsInfo .mSales{
+    color: #6c6c6c;
+    padding-top: 8px;
+}
+div.recommend .content .recommendGoodsLi .goodsInfo .storeIcon{
+    float: right;
+    width: 16px;
+    height: 16px;
+}
+div.recommend .content .recommendGoodsLi .goodsInfo .tmall{
+    background: url('../widget/cartMain.png') no-repeat 0 -38px;
+}
+div.recommend .content .recommendGoodsLi .goodsInfo .accordingTo{
+    height: 20px;
+    line-height: 20px;
+    font-size: 0;
+    overflow: hidden;
+    color: #9c9c9c;
+    padding: 8px 0;
+}
+div.recommend .content .recommendGoodsLi .goodsInfo .accordingTo span{
+    font-size: 12px;
+}
+div.recommend .content .recommendGoodsLi .goodsInfo .accordingTo .item{
+    color: #6c6c6c;
+}
+
+/* 下方圆形导航条 */
+div.recommend .pointNav{
+    height: 30px;
+    text-align: center;
+}
+div.recommend .pointNav .pointContainer{
+}
+div.recommend .pointNav .pointContainer .point{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: #ccc;
+    border-radius: 100%;
+    margin: 0 7px;
+    cursor: pointer;
+}
+div.recommend .pointNav .pointContainer .current{
+    background: #f40;
+}

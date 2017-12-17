@@ -594,3 +594,276 @@ var GoodsInformation = {
         }
     ]
 }
+
+var RecommendGoods = [
+    {
+        id: 536110897708,
+        title: "type-c转接头5乐视小米6华为P10手机9数据线usb安卓充电器otg转换",
+        primePrice: 4,
+        unitPrice: 2.9,
+        mSales: 22312,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "数据线"
+    },
+    {
+        id: 40355243427,
+        title: "嘉华鲜花饼经典玫瑰饼10枚云南特产零食小吃传统糕点饼干送便携袋",
+        primePrice: 48,
+        unitPrice: 38,
+        mSales: 43971,
+        storeType: "tmall",
+        accordingTo: "浏览",
+        item: "传统糕点"
+    },
+    {
+        id: 559707596032,
+        title: "暖手抱枕插手毛绒玩具冬天季暖手宝公仔女生布娃娃可爱暖手捂手枕",
+        primePrice: 50,
+        unitPrice: 25,
+        mSales: 8199,
+        storeType: "tmall",
+        accordingTo: "浏览",
+        item: "毛绒布艺类玩具"
+    },
+    {
+        id: 527080261251,
+        title: "Midea/美的 KFR-35GW/WCBD3@ 大1.5匹云智能冷暖壁挂家用空调挂机",
+        primePrice: 2499,
+        unitPrice: 2499,
+        mSales: 3193,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "空调"
+    },
+    {
+        id: 525557869145,
+        title: "Midea/美的 MK-HJ1701家用电热水壶防烫304不锈钢烧水壶自动断电",
+        primePrice: 99,
+        unitPrice: 99,
+        mSales: 25192,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "电热水壶"
+    },
+    {
+        id: 544393112804,
+        title: "圣诞礼品盒长方形正方形大小生日礼物包装盒伴手礼创意文艺小清新",
+        primePrice: 9,
+        unitPrice: 6.9,
+        mSales: 23721,
+        storeType: null,
+        accordingTo: "浏览",
+        item: "糖盒/糖盒配件"
+    },
+    {
+        id: 540006945460,
+        title: "type-c转接头5小米4c乐视手机华为P9数据线USB安卓充电器otg转换6",
+        primePrice: 6,
+        unitPrice: 2.9,
+        mSales: 25038,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "数据线"
+    },
+    {
+        id: 536110897708,
+        title: "type-c转接头5乐视小米6华为P10手机9数据线usb安卓充电器otg转换",
+        primePrice: 4,
+        unitPrice: 2.9,
+        mSales: 22312,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "数据线"
+    },
+    {
+        id: 40355243427,
+        title: "嘉华鲜花饼经典玫瑰饼10枚云南特产零食小吃传统糕点饼干送便携袋",
+        primePrice: 48,
+        unitPrice: 38,
+        mSales: 43971,
+        storeType: "tmall",
+        accordingTo: "浏览",
+        item: "传统糕点"
+    },
+    {
+        id: 559707596032,
+        title: "暖手抱枕插手毛绒玩具冬天季暖手宝公仔女生布娃娃可爱暖手捂手枕",
+        primePrice: 50,
+        unitPrice: 25,
+        mSales: 8199,
+        storeType: "tmall",
+        accordingTo: "浏览",
+        item: "毛绒布艺类玩具"
+    },
+    {
+        id: 527080261251,
+        title: "Midea/美的 KFR-35GW/WCBD3@ 大1.5匹云智能冷暖壁挂家用空调挂机",
+        primePrice: 2499,
+        unitPrice: 2499,
+        mSales: 3193,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "空调"
+    },
+    {
+        id: 525557869145,
+        title: "Midea/美的 MK-HJ1701家用电热水壶防烫304不锈钢烧水壶自动断电",
+        primePrice: 99,
+        unitPrice: 99,
+        mSales: 25192,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "电热水壶"
+    },
+    {
+        id: 544393112804,
+        title: "圣诞礼品盒长方形正方形大小生日礼物包装盒伴手礼创意文艺小清新",
+        primePrice: 9,
+        unitPrice: 6.9,
+        mSales: 23721,
+        storeType: null,
+        accordingTo: "浏览",
+        item: "糖盒/糖盒配件"
+    },
+    {
+        id: 540006945460,
+        title: "type-c转接头5小米4c乐视手机华为P9数据线USB安卓充电器otg转换6",
+        primePrice: 6,
+        unitPrice: 2.9,
+        mSales: 25038,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "数据线"
+    },
+    {
+        id: 40355243427,
+        title: "嘉华鲜花饼经典玫瑰饼10枚云南特产零食小吃传统糕点饼干送便携袋",
+        primePrice: 48,
+        unitPrice: 38,
+        mSales: 43971,
+        storeType: "tmall",
+        accordingTo: "浏览",
+        item: "传统糕点"
+    },
+    {
+        id: 559707596032,
+        title: "暖手抱枕插手毛绒玩具冬天季暖手宝公仔女生布娃娃可爱暖手捂手枕",
+        primePrice: 50,
+        unitPrice: 25,
+        mSales: 8199,
+        storeType: "tmall",
+        accordingTo: "浏览",
+        item: "毛绒布艺类玩具"
+    },
+    {
+        id: 527080261251,
+        title: "Midea/美的 KFR-35GW/WCBD3@ 大1.5匹云智能冷暖壁挂家用空调挂机",
+        primePrice: 2499,
+        unitPrice: 2499,
+        mSales: 3193,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "空调"
+    },
+    {
+        id: 525557869145,
+        title: "Midea/美的 MK-HJ1701家用电热水壶防烫304不锈钢烧水壶自动断电",
+        primePrice: 99,
+        unitPrice: 99,
+        mSales: 25192,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "电热水壶"
+    },
+    {
+        id: 544393112804,
+        title: "圣诞礼品盒长方形正方形大小生日礼物包装盒伴手礼创意文艺小清新",
+        primePrice: 9,
+        unitPrice: 6.9,
+        mSales: 23721,
+        storeType: null,
+        accordingTo: "浏览",
+        item: "糖盒/糖盒配件"
+    },
+    {
+        id: 540006945460,
+        title: "type-c转接头5小米4c乐视手机华为P9数据线USB安卓充电器otg转换6",
+        primePrice: 6,
+        unitPrice: 2.9,
+        mSales: 25038,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "数据线"
+    },
+    {
+        id: 536110897708,
+        title: "type-c转接头5乐视小米6华为P10手机9数据线usb安卓充电器otg转换",
+        primePrice: 4,
+        unitPrice: 2.9,
+        mSales: 22312,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "数据线"
+    },
+    {
+        id: 40355243427,
+        title: "嘉华鲜花饼经典玫瑰饼10枚云南特产零食小吃传统糕点饼干送便携袋",
+        primePrice: 48,
+        unitPrice: 38,
+        mSales: 43971,
+        storeType: "tmall",
+        accordingTo: "浏览",
+        item: "传统糕点"
+    },
+    {
+        id: 559707596032,
+        title: "暖手抱枕插手毛绒玩具冬天季暖手宝公仔女生布娃娃可爱暖手捂手枕",
+        primePrice: 50,
+        unitPrice: 25,
+        mSales: 8199,
+        storeType: "tmall",
+        accordingTo: "浏览",
+        item: "毛绒布艺类玩具"
+    },
+    {
+        id: 527080261251,
+        title: "Midea/美的 KFR-35GW/WCBD3@ 大1.5匹云智能冷暖壁挂家用空调挂机",
+        primePrice: 2499,
+        unitPrice: 2499,
+        mSales: 3193,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "空调"
+    },
+    {
+        id: 525557869145,
+        title: "Midea/美的 MK-HJ1701家用电热水壶防烫304不锈钢烧水壶自动断电",
+        primePrice: 99,
+        unitPrice: 99,
+        mSales: 25192,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "电热水壶"
+    },
+    {
+        id: 544393112804,
+        title: "圣诞礼品盒长方形正方形大小生日礼物包装盒伴手礼创意文艺小清新",
+        primePrice: 9,
+        unitPrice: 6.9,
+        mSales: 23721,
+        storeType: null,
+        accordingTo: "浏览",
+        item: "糖盒/糖盒配件"
+    },
+    {
+        id: 540006945460,
+        title: "type-c转接头5小米4c乐视手机华为P9数据线USB安卓充电器otg转换6",
+        primePrice: 6,
+        unitPrice: 2.9,
+        mSales: 25038,
+        storeType: "tmall",
+        accordingTo: "加购",
+        item: "数据线"
+    }
+]
