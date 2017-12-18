@@ -77,6 +77,8 @@ li span{
 }
 ```
 
+### jQuery生成的`<span>`之间是没有默认间距的，当然如果给空`<span>`添加的`letter-spacing`也不会生效
+
 ## `animate()`动画方法
 
 语法： `$(selector).animate(styles,speed,easing,callback)`
@@ -255,3 +257,27 @@ $(window).scroll(function(){
     mthis.cartFooter.css('position', 'fixed');
   }
 })
+```
+
+## jQuery `data()` 注意事项
+
+```javascript
+ele.data('data-num', 100);
+ele.data({
+  'data-num': 50,
+  'data-id': 'abc'
+});
+console.log(ele.data());
+// { dataNum: 100, data-num: 50, data-id: "abc" }
+```
+
+`data( 属性名， 属性值 )`传入两个参数的时候，如果属性名是 kebab-case(短横线命名法)，会自动转换为camelCase(驼峰命名法)。传入一个对象的时候，不会自动转换。
+
+## jQuery获取CSS的数值
+
+```javascript
+Number( $(this).css('padding-left').slice(0, -2) );
+```
+
+`$(this).css('padding-left')`获取到的是字符串格式 '10px' ，然后用 `slice()` 去掉后面的'px'，再转换成数字
+
